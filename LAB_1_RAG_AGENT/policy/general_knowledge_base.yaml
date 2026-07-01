@@ -1,0 +1,40 @@
+spec_version: v1
+kind: knowledge_base
+name: general_knowledge_base_miew
+description: |
+  This knowledge base provides a comprehensive and authoritative reference for the company's Credit Control System and procurement policies. It consolidates all essential rules, procedures, guidelines, and best practices required for procurement teams, finance departments, and business operations to manage credit, payments, and vendor relationships effectively.
+  - Defines the overarching principles governing credit control operations, including credit policy framework, risk assessment criteria, credit limit determination, payment terms, and collection procedures across all business units.
+  - Contains detailed credit management policies applicable to all customer categories — new customers, existing customers, high-value accounts, and special credit arrangements — ensuring consistent credit risk management throughout the organization.
+  - Establishes clear definitions and conditions for credit terms, payment schedules, early payment discounts, late payment penalties, credit holds, and debt collection escalation procedures.
+  - Specifies eligibility criteria, required documentation, and approval workflows for credit applications, credit limit increases, payment term extensions, and special credit arrangements.
+  - Outlines procurement team responsibilities for vendor selection, purchase order management, invoice processing, payment authorization, and maintaining accurate financial records in compliance with company procedures.
+  - Provides clear guidelines for managing overdue accounts, including reminder schedules, collection strategies, legal action thresholds, and bad debt write-off procedures.
+  - Clarifies management responsibilities for reviewing credit applications, approving credit limits, monitoring accounts receivable aging, and making decisions on credit holds or account suspensions based on payment history and risk assessment.
+  - Defines vendor management procedures including supplier evaluation, contract negotiation, performance monitoring, and dispute resolution processes.
+  - States that the company reserves the right to revise, amend, or update credit control and procurement policies in response to market conditions, regulatory changes, or evolving business needs.
+  - Serves as a unified policy reference designed to help procurement and finance teams understand their responsibilities, operational procedures, risk management protocols, and the correct processes for credit control and business operations management.
+
+documents:
+  - path: ./CreditControlSystem_v2.pdf
+
+vector_index:
+  embeddings_model_name: intfloat/multilingual-e5-large
+  chunk_size: 1000
+  chunk_overlap: 300
+  extraction_strategy: standard
+
+conversational_search_tool:
+  language: "th"
+  generation:
+    enabled: False
+    generated_response_length: Verbose
+    max_docs_passed_to_llm: 10
+  confidence_thresholds:
+    retrieval_confidence_threshold: 'Low'
+    response_confidence_threshold: 'Low'
+  query_rewrite:
+    enabled: True
+  citations:
+    citations_shown: -1
+  supports_full_document: True
+  
