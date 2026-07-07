@@ -1,0 +1,2 @@
+name:
+desc: Reference knowledge base for the Sunrise General Hospital Dental Department AI assistant. Contains department operating hours, emergency contact information, estimated pricing for common dental procedures, a symptom-to-urgency triage guide, frequently asked questions, insurance/billing policies, and behavioral guidelines for the agent (e.g., when to escalate to emergency care, disclaimers on cost estimates and diagnoses). Used to ground the agent's answers to patient inquiries about clinic hours, procedure costs, and symptom guidance.

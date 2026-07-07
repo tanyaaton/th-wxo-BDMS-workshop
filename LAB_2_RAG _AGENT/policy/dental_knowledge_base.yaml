@@ -1,0 +1,39 @@
+spec_version: v1
+kind: knowledge_base
+name: dental_knowledge_base
+description: |
+  Reference knowledge base for the Sunrise General Hospital Dental Department AI assistant. Contains department operating hours, emergency contact information, estimated pricing for common dental procedures, a symptom-to-urgency triage guide, frequently asked questions, insurance/billing policies, and behavioral guidelines for the agent (e.g., when to escalate to emergency care, disclaimers on cost estimates and diagnoses). Used to ground the agent's answers to patient inquiries about clinic hours, procedure costs, and symptom guidance.
+  - Defines the overarching information framework for the Sunrise General Hospital Dental Department, including department scope, patient services, and operational guidelines.
+  - Contains detailed information on dental department operating hours, appointment procedures, walk-in policies, and emergency contact numbers for after-hours dental care.
+  - Provides estimated pricing for common dental procedures including consultations, X-rays, cleanings, fillings, extractions, root canals, crowns, veneers, dentures, and orthodontic treatments — with clear disclaimers that actual costs may vary.
+  - Includes a symptom-to-urgency triage guide that helps patients determine whether their dental condition requires emergency care, an urgent appointment within 24–48 hours, or a standard routine appointment.
+  - Contains a comprehensive FAQ section covering pre-procedure preparation, procedure descriptions, post-treatment care, recovery expectations, and general dental health advice.
+  - Specifies insurance coverage policies, accepted insurance plans, billing procedures, co-payment requirements, payment methods accepted, and guidance on out-of-pocket cost estimation.
+  - Establishes behavioral guidelines for the AI assistant, including when to escalate to emergency care recommendations, how to handle ambiguous symptoms, and mandatory disclaimers on cost estimates and medical diagnoses.
+  - States that cost estimates and clinical information are provided for general guidance only, and patients should consult a dental professional for accurate diagnosis and treatment planning.
+  - Serves as a unified reference to help patients navigate dental services at Sunrise General Hospital, understand their treatment options, and prepare for their dental visits.
+
+documents:
+  - path: ./dental_department_knowledge_base.pdf
+  - path: ./dental_department_knowledge_base_th.pdf
+
+vector_index:
+  embeddings_model_name: intfloat/multilingual-e5-large
+  chunk_size: 1000
+  chunk_overlap: 300
+  extraction_strategy: standard
+
+conversational_search_tool:
+  language: "th"
+  generation:
+    enabled: False
+    generated_response_length: Verbose
+    max_docs_passed_to_llm: 10
+  confidence_thresholds:
+    retrieval_confidence_threshold: 'Low'
+    response_confidence_threshold: 'Low'
+  query_rewrite:
+    enabled: True
+  citations:
+    citations_shown: -1
+  supports_full_document: True
