@@ -1,4 +1,4 @@
-1. search for gmail pre-built agent
+1. do to `Discovery` page, search for google pre-built agent
 2. choose "Email manager"
 3. click in tools > connection
 4. configure connection as follow:
